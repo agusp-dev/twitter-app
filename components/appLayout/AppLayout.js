@@ -1,11 +1,35 @@
-import { fonts, colors } from '../../styles/theme'
+import { fonts, colors, breakpoints } from '../../styles/theme'
 import { addOpacityToColor } from '../../styles/utils'
 
 export default function AppLayout({ children }) {
 	const backgroundColor = addOpacityToColor(colors.primary, 0.3)
   return (
 		<>
-			<main>{ children }</main>
+			<div>
+        <main>{ children }</main>
+      </div>
+      <style jsx>{`
+        div {
+          height: 100vh;
+          display: grid;
+          place-items: center;
+        }
+        main {
+          width: 100%;
+          height: 100%;
+          background: ${colors.white};
+          box-shadow: 0 10px 25px rgba(0, 0, 0, .3);
+          border-radius: 10px;
+        }
+
+        @media (min-width: ${breakpoints.mobile}) {
+          main {
+            width: ${breakpoints.mobile};
+            height: 90vh;
+          }
+        }
+
+      `}</style>
 			<style jsx global>{`
 				html,
 				body {
@@ -25,22 +49,3 @@ export default function AppLayout({ children }) {
 		</>
 	)
 }
-
-/**
- * html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
- */

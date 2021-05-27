@@ -13,7 +13,7 @@ export default function Home() {
 
       <AppLayout>
 				<h1>
-					<a href="https://nextjs.org">Twitter App</a>
+					<a href="https://nextjs.org">TwetDev</a>
 				</h1>
       </AppLayout>
 
