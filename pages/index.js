@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import AppLayout from '../components/appLayout/AppLayout'
-import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 
 export default function Home() {
@@ -13,15 +12,14 @@ export default function Home() {
       </Head>
 
       <AppLayout>
-        <nav className={styles.nav}>
-          <h1 className={styles.title}>
-            <a href="https://nextjs.org">Twitter</a>
-          </h1>
-          <Link href='/timeline'>
-            Timeline
-          </Link>
-        </nav>
+				<h1>
+					<a href="https://nextjs.org">Twitter App</a>
+				</h1>
       </AppLayout>
+
+			<style jsx>{`
+				
+			`}</style>
     </>
   )
 }
