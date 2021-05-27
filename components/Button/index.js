@@ -1,0 +1,35 @@
+import { colors } from "../../styles/theme";
+
+export default function Button({ children, onClick }) {
+  return (
+    <>
+      <button onClick={ onClick }>
+        { children }
+      </button>
+
+      <style jsx>{`
+        button {
+          display: flex;
+          align-items: center;
+          background: ${colors.black};
+          border: 0;
+          color: ${colors.white};
+          cursor: pointer;
+          border-radius: 100px;
+          font-size: 16px;
+          padding: 8px 24px;
+          transition: opacity .3s ease;
+        }  
+        /**
+        * button svg
+        */
+        button > :global(svg) {
+          margin-right: 8px;
+        }
+        button:hover {
+          opacity: .7;
+        }
+      `}</style>
+    </>
+  )
+}

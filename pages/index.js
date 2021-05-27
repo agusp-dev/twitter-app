@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import AppLayout from '../components/appLayout/AppLayout'
-import Link from 'next/link'
+import Button from '../components/Button'
+import Github from '../components/Icons/Github'
 import { colors } from '../styles/theme'
 
 export default function Home() {
@@ -17,6 +18,12 @@ export default function Home() {
           <img src='/logo.png' alt='TweetDev' />
           <h1>TweetDev</h1>
           <h2>Talk about development<br />with developers 👨‍💻👩‍💻</h2>
+          <div>
+            <Button>
+              <Github fill={colors.white} />
+              Login with Github
+            </Button>
+          </div>
         </section>
       </AppLayout>
 
@@ -39,6 +46,9 @@ export default function Home() {
           color: ${colors.secondary};
           font-size: 18px;
           margin: 0px;
+        }
+        div {
+          margin-top: 16px;
         }
 			`}</style>
     </>
