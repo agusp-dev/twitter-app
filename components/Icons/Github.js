@@ -1,5 +1,5 @@
 
-export default function Github(props) {
+export default function Github (props) {
   return (
     <svg
       width="1em"

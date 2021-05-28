@@ -3,23 +3,21 @@ import Head from 'next/head'
 import AppLayout from '../components/appLayout/AppLayout'
 import Button from '../components/Button'
 import Github from '../components/Icons/Github'
-import { 
-	loginWithGithub, 
-	onAuthStateChanged 
+import {
+  loginWithGithub,
+  onAuthStateChanged
 } from '../firebase/client'
 import { colors } from '../styles/theme'
 
-export default function Home() {
+export default function Home () {
+  const [user, setUser] = useState(undefined)
+  useEffect(() => {
+    onAuthStateChanged(setUser)
+  }, [])
 
-	const [user, setUser] = useState(undefined)
-	console.log(user)
-	useEffect(() => {
-		onAuthStateChanged( setUser )
-	}, [])
-
-	const onHandleLogin = () => {
-		loginWithGithub().then( setUser )
-	}
+  const onHandleLogin = () => {
+    loginWithGithub().then(setUser)
+  }
 
   return (
     <>
@@ -34,21 +32,21 @@ export default function Home() {
           <img src='/logo.png' alt='TweetDev' />
           <h1>TweetDev</h1>
           <h2>Talk about development<br />with developers 👨‍💻👩‍💻</h2>
-					<div>
-						{user === null && (
-							<Button onClick={onHandleLogin}>
-								<Github fill={colors.white} />
-								Login with Github
-							</Button>
-						)}
-						{user && user.username && user.avatar && (
-							<div>{ user.username }</div>
-						)}
-					</div>
+          <div>
+            {user === null && (
+              <Button onClick={onHandleLogin}>
+                <Github fill={colors.white} />
+                Login with Github
+              </Button>
+            )}
+            {user && user.username && user.avatar && (
+              <div>{ user.username }</div>
+            )}
+          </div>
         </section>
       </AppLayout>
 
-			<style jsx>{`
+      <style jsx>{`
         section {
           height: 100%;
           display: grid;
@@ -71,7 +69,7 @@ export default function Home() {
         div {
           margin-top: 16px;
         }
-			`}</style>
+      `}</style>
     </>
   )
 }

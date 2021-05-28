@@ -1,6 +1,7 @@
-import { colors } from "../../styles/theme";
+import PropTypes from 'prop-types'
+import { colors } from '../../styles/theme'
 
-export default function Button({ children, onClick }) {
+export default function Button ({ children, onClick }) {
   return (
     <>
       <button onClick={ onClick }>
@@ -32,4 +33,9 @@ export default function Button({ children, onClick }) {
       `}</style>
     </>
   )
+}
+
+Button.propTypes = {
+  children: PropTypes.object.isRequired,
+  onClick: PropTypes.func.isRequired
 }
