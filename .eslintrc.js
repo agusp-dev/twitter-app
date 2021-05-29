@@ -1,3 +1,8 @@
+const RULES = {
+  OFF: 'off',
+  ERROR: 'error',
+  WARN: 'warn'
+}
 module.exports = {
   env: {
     browser: true,
@@ -20,6 +25,6 @@ module.exports = {
   ],
   rules: {
     // suppress errors for missing 'import React' in files
-    'react/react-in-jsx-scope': 'off'
+    'react/react-in-jsx-scope': RULES.OFF
   }
 }
