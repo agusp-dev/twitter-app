@@ -1,12 +1,10 @@
-import PropTypes from 'prop-types'
-import { colors } from '../../styles/theme'
+import PropTypes from "prop-types"
+import { colors } from "../../styles/theme"
 
-export default function Button ({ children, onClick }) {
+export default function Button({ children, onClick }) {
   return (
     <>
-      <button onClick={ onClick }>
-        { children }
-      </button>
+      <button onClick={onClick}>{children}</button>
 
       <style jsx>{`
         button {
@@ -19,8 +17,8 @@ export default function Button ({ children, onClick }) {
           border-radius: 100px;
           font-size: 16px;
           padding: 8px 24px;
-          transition: opacity .3s ease;
-        }  
+          transition: opacity 0.3s ease;
+        }
         /**
         * button svg
         */
@@ -28,7 +26,7 @@ export default function Button ({ children, onClick }) {
           margin-right: 8px;
         }
         button:hover {
-          opacity: .7;
+          opacity: 0.7;
         }
       `}</style>
     </>
@@ -37,5 +35,5 @@ export default function Button ({ children, onClick }) {
 
 Button.propTypes = {
   children: PropTypes.object.isRequired,
-  onClick: PropTypes.func.isRequired
+  onClick: PropTypes.func.isRequired,
 }

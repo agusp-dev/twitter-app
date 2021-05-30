@@ -1,15 +1,12 @@
-import { useState, useEffect } from 'react'
-import Head from 'next/head'
-import AppLayout from '../components/appLayout/AppLayout'
-import Button from '../components/Button'
-import Github from '../components/Icons/Github'
-import {
-  loginWithGithub,
-  onAuthStateChanged
-} from '../firebase/client'
-import { colors } from '../styles/theme'
+import { useState, useEffect } from "react"
+import Head from "next/head"
+import AppLayout from "../components/appLayout/AppLayout"
+import Button from "../components/Button"
+import Github from "../components/Icons/Github"
+import { loginWithGithub, onAuthStateChanged } from "../firebase/client"
+import { colors } from "../styles/theme"
 
-export default function Home () {
+export default function Home() {
   const [user, setUser] = useState(undefined)
   useEffect(() => {
     onAuthStateChanged(setUser)
@@ -29,9 +26,13 @@ export default function Home () {
 
       <AppLayout>
         <section>
-          <img src='/logo.png' alt='TweetDev' />
+          <img src="/logo.png" alt="TweetDev" />
           <h1>TweetDev</h1>
-          <h2>Talk about development<br />with developers 👨‍💻👩‍💻</h2>
+          <h2>
+            Talk about development
+            <br />
+            with developers 👨‍💻👩‍💻
+          </h2>
           <div>
             {user === null && (
               <Button onClick={onHandleLogin}>
@@ -39,9 +40,7 @@ export default function Home () {
                 Login with Github
               </Button>
             )}
-            {user && user.username && user.avatar && (
-              <div>{ user.username }</div>
-            )}
+            {user && user.username && user.avatar && <div>{user.username}</div>}
           </div>
         </section>
       </AppLayout>
