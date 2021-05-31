@@ -1,6 +1,6 @@
-import PropTypes from "prop-types"
-import styles from "./styles"
-import Avatar from "../../components/Avatar/index"
+import PropTypes from 'prop-types'
+import Avatar from 'components/Avatar/index'
+import styles from './styles'
 
 export default function Tweet({ username, avatar, message }) {
   return (

@@ -1,5 +1,5 @@
-import PropTypes from "prop-types"
-import styles, { globalStyles } from "./styles"
+import PropTypes from 'prop-types'
+import styles, { globalStyles } from './styles'
 
 export default function AppLayout({ children }) {
   return (

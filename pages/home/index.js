@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react"
-import AppLayout from "../../components/appLayout/AppLayout"
-import styles from "./styles"
-import Tweet from "../../components/Tweet/index"
+import { useEffect, useState } from 'react'
+import AppLayout from 'components/AppLayout'
+import Tweet from 'components/Tweet'
+import styles from './styles'
 
 export default function HomePage() {
   const [timeline, setTimeline] = useState([])
 
   useEffect(() => {
-    fetch("/api/statuses/home_timeline")
+    fetch('/api/statuses/home_timeline')
       .then((res) => res.json())
       .then(setTimeline)
   }, [])

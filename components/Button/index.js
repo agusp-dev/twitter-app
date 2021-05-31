@@ -1,5 +1,5 @@
-import PropTypes from "prop-types"
-import { colors } from "../../styles/theme"
+import PropTypes from 'prop-types'
+import { colors } from '../../styles/theme'
 
 export default function Button({ children, onClick }) {
   return (

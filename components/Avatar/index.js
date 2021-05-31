@@ -1,5 +1,5 @@
-import PropTypes from "prop-types"
-import styles from "./styles"
+import PropTypes from 'prop-types'
+import styles from './styles'
 
 export default function Avatar({ alt, src, withLbl, lbl }) {
   return (
