@@ -7,7 +7,7 @@ export default css`
     align-items: center;
     border-bottom: 1px solid #ccc;
     height: 49px;
-    position: fixed;
+    position: sticky;
     top: 0;
   }
 
@@ -25,6 +25,6 @@ export default css`
     bottom: 0;
     border-top: 1px solid #ccc;
     height: 49px;
-    position: fixed;
+    position: sticky;
   }
 `
