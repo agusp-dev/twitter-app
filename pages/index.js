@@ -5,6 +5,7 @@ import Button from "../components/Button"
 import Github from "../components/Icons/Github"
 import { loginWithGithub, onAuthStateChanged } from "../firebase/client"
 import { colors } from "../styles/theme"
+import Avatar from "../components/Avatar/index"
 
 export default function Home() {
   const [user, setUser] = useState(undefined)
@@ -40,7 +41,14 @@ export default function Home() {
                 Login with Github
               </Button>
             )}
-            {user && user.username && user.avatar && <div>{user.username}</div>}
+            {user && user.username && user.avatar && (
+              <Avatar
+                src={user.avatar}
+                alt={user.username}
+                withLbl={true}
+                lbl={user.username}
+              />
+            )}
           </div>
         </section>
       </AppLayout>
@@ -66,7 +74,8 @@ export default function Home() {
           margin: 0px;
         }
         div {
-          margin-top: 16px;
+          width: 100%;
+          margin-top: 24px;
         }
       `}</style>
     </>
