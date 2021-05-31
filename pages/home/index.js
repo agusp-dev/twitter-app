@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import AppLayout from '../../components/appLayout/AppLayout'
+import AppLayout from 'components/AppLayout'
+import Tweet from 'components/Tweet'
 import styles from './styles'
-import Tweet from '../../components/Tweet/index'
 
 export default function HomePage() {
   const [timeline, setTimeline] = useState([])
